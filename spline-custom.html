@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spline Custom - Branco e Azul</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: #0f1b2d;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      padding: 40px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .preview-card {
+      background: linear-gradient(135deg, #1a56db 0%, #3b73f0 100%);
+      border-radius: 20px;
+      padding: 30px;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-card.light {
+      background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+    }
+
+    .preview-card h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .preview-card.light h3 {
+      color: #0f1b2d;
+    }
+
+    spline-viewer {
+      width: 100%;
+      height: 400px;
+      display: block;
+    }
+
+    .info {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.95);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .info h4 {
+      color: #1a56db;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .info p {
+      color: #56657a;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .code {
+      background: #f4f6f9;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #0f1b2d;
+      margin-top: 12px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="preview-grid">
+      
+      <!-- Card 1: Fundo Azul -->
+      <div class="preview-card">
+        <h3>🎨 Versão Azul (para seções escuras)</h3>
+        <spline-viewer 
+          url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+          style="filter: hue-rotate(180deg) saturate(0.8) brightness(1.2);"
+        ></spline-viewer>
+      </div>
+
+      <!-- Card 2: Fundo Claro -->
+      <div class="preview-card light">
+        <h3>⚪ Versão Clara (para seções brancas)</h3>
+        <spline-viewer 
+          url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+          style="filter: hue-rotate(200deg) saturate(0.6) brightness(1.4) invert(1);"
+        ></spline-viewer>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="info">
+    <h4>🔧 Como personalizar as cores do Spline</h4>
+    <p>
+      Use <strong>filters CSS</strong> para ajustar as cores sem precisar recriar a cena no Spline.
+      Experimente os valores abaixo no seu <code>index.html</code>:
+    </p>
+    <div class="code">
+.hero-spline spline-viewer {
+  filter: hue-rotate(200deg) saturate(0.5) brightness(1.3);
+}
+    </div>
+    <p style="margin-top: 12px; font-size: 12px;">
+      <strong>Dica:</strong> Para uma solução perfeita, crie sua cena diretamente no 
+      <a href="https://spline.design/" target="_blank" style="color: #1a56db;">spline.design</a> 
+      usando materiais brancos (#FFFFFF) e azuis (#1a56db, #3b73f0).
+    </p>
+  </div>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@splinetool/viewer@1.9.99/build/spline-viewer.js"></script>
+</body>
+</html>

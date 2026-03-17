@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste Filtros Spline</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #eef3ff 0%, #f7f9ff 50%, #ffffff 100%);
+      min-height: 100vh;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #0f1b2d;
+      margin-bottom: 40px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 14px;
+      color: #0f1b2d;
+      margin-bottom: 15px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .card spline-viewer {
+      width: 100%;
+      height: 350px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .code {
+      margin-top: 12px;
+      padding: 10px;
+      background: #f4f6f9;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #56657a;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Teste de Filtros - Spline Branco & Azul</h1>
+  
+  <div class="grid">
+    
+    <!-- Opção 1: Invertido -->
+    <div class="card">
+      <h3>1. Invertido (Branco puro)</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: invert(1) brightness(1.1) contrast(1.05);"
+      ></spline-viewer>
+      <div class="code">filter: invert(1) brightness(1.1);</div>
+    </div>
+
+    <!-- Opção 2: Invertido + Azulado -->
+    <div class="card">
+      <h3>2. Invertido + Azul</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: invert(1) sepia(1) hue-rotate(190deg) saturate(2) brightness(1.1);"
+      ></spline-viewer>
+      <div class="code">filter: invert(1) sepia(1) hue-rotate(190deg);</div>
+    </div>
+
+    <!-- Opção 3: Claro com azul suave -->
+    <div class="card">
+      <h3>3. Claro + Azul suave</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: brightness(1.6) contrast(1.15) hue-rotate(190deg) saturate(0.4);"
+      ></spline-viewer>
+      <div class="code">filter: brightness(1.6) hue-rotate(190deg);</div>
+    </div>
+
+    <!-- Opção 4: Branco total -->
+    <div class="card">
+      <h3>4. Branco total</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: brightness(2) contrast(0.9) saturate(0);"
+      ></spline-viewer>
+      <div class="code">filter: brightness(2) saturate(0);</div>
+    </div>
+
+    <!-- Opção 5: Azulado claro -->
+    <div class="card">
+      <h3>5. Azul claro intenso</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: invert(1) sepia(0.5) hue-rotate(195deg) saturate(1.5) brightness(1.15);"
+      ></spline-viewer>
+      <div class="code">filter: invert(1) sepia(0.5) saturate(1.5);</div>
+    </div>
+
+    <!-- Opção 6: Gradiente azul -->
+    <div class="card">
+      <h3>6. Gradiente Azul/Branco</h3>
+      <spline-viewer 
+        url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+        style="filter: invert(1) brightness(1.25) contrast(1.1) saturate(0.8);"
+      ></spline-viewer>
+      <div class="code">filter: invert(1) brightness(1.25);</div>
+    </div>
+
+  </div>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@splinetool/viewer@1.9.99/build/spline-viewer.js"></script>
+</body>
+</html>
