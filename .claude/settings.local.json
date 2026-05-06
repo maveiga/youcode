@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:stripe.com)",
+      "WebFetch(domain:www.atlassian.com)",
+      "WebFetch(domain:www.notion.so)",
+      "WebFetch(domain:medr.com.br)"
+    ]
+  }
+}

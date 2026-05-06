@@ -3,25 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youcode · Desenvolvedor de Sistemas & Inteligência Artificial</title>
+  <title>dev. · Desenvolvedor de Sistemas & Inteligência Artificial</title>
   <meta name="description" content="Desenvolvedor de sistemas SaaS, automação e inteligência artificial. Crio plataformas escaláveis que transformam ideias em negócios.">
-  <meta name="keywords" content="desenvolvedor SaaS, automação, inteligência artificial, sistemas web, MVP, startup, WhatsApp API, React, Node.js, Python, Youcode">
-  <meta name="author" content="Youcode">
-  <meta property="og:title" content="Youcode · Desenvolvedor de Sistemas & Inteligência Artificial">
+  <meta name="keywords" content="desenvolvedor SaaS, automação, inteligência artificial, sistemas web, MVP, startup, WhatsApp API, React, Node.js, Python">
+  <meta name="author" content="Desenvolvedor de Sistemas e IA">
+  <meta property="og:title" content="dev. · Desenvolvedor de Sistemas & Inteligência Artificial">
   <meta property="og:description" content="Crio plataformas SaaS, automações e soluções digitais que transformam ideias em negócios escaláveis.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72' fill='none'%3E%3Crect width='72' height='72' rx='18' fill='url(%23g)'/%3E%3Cpath d='M24 26L34 36L24 46' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='38' y1='46' x2='50' y2='46' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='72' y2='72'%3E%3Cstop stop-color='%231a56db'/%3E%3Cstop offset='1' stop-color='%233b73f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- Spline Runtime for 3D scenes -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@splinetool/viewer@1.9.99/build/spline-viewer.js"></script>
 
   <style>
     /* ============================================================
@@ -206,9 +200,6 @@
       justify-content: space-between;
     }
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       font-family: var(--f-display);
       font-size: 22px;
       font-weight: 800;
@@ -217,7 +208,6 @@
       letter-spacing: -0.5px;
     }
     .nav-logo span { color: var(--primary); }
-    .nav-logo svg { flex-shrink: 0; }
 
     .nav-links {
       display: flex;
@@ -288,7 +278,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #eef3ff 0%, #f2f7ff 30%, #ffffff 60%, #eef8ff 85%, #f0f4ff 100%);
+      background: linear-gradient(160deg, #eef3ff 0%, #f7f9ff 45%, #ffffff 100%);
     }
 
     .hero-grid {
@@ -331,42 +321,6 @@
       position: relative;
       z-index: 2;
       padding-top: var(--nav-h);
-      max-width: 620px;
-    }
-
-    /* Spline 3D Background */
-    .hero-spline {
-      position: absolute;
-      top: 55%;
-      right: -8%;
-      transform: translateY(-50%);
-      width: 60%;
-      height: 85%;
-      z-index: 1;
-      pointer-events: auto;
-      opacity: 0.95;
-    }
-    .hero-spline {
-      filter: hue-rotate(210deg) saturate(0.55) brightness(1.5) contrast(1.1);
-    }
-    .hero-spline::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, rgba(26,86,219,0.12), rgba(59,115,240,0.08), transparent 70%);
-      border-radius: 50%;
-      filter: blur(80px);
-      z-index: -1;
-    }
-    @media (min-width: 1025px) {
-      .hero-content {
-        padding-right: 20px;
-      }
-    }
-    @media (max-width: 1024px) {
-      .hero-spline {
-        display: none;
-      }
     }
 
     .badge {
@@ -561,7 +515,7 @@
     .proj-card:hover {
       border-color: var(--border-h);
       transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(15,27,60,0.12), 0 0 0 1px rgba(26,86,219,0.15), 0 0 24px rgba(26,86,219,0.08);
+      box-shadow: 0 12px 40px rgba(15,27,60,0.12), 0 0 0 1px rgba(26,86,219,0.15);
     }
     .proj-card:hover::before { opacity: 1; }
     .proj-card.wide { grid-column: span 2; }
@@ -812,10 +766,8 @@
       flex-wrap: wrap;
       gap: 14px;
     }
-    .foot-logo { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+    .foot-logo { font-family: var(--f-display); font-size: 18px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
     .foot-logo span { color: var(--primary); }
-    .foot-logo svg { flex-shrink: 0; }
-    .foot-tagline { font-size: 13px; color: var(--text-3); margin-top: 4px; font-weight: 400; }
     .foot-copy { font-size: 13px; color: var(--text-3); }
     .foot-links { display: flex; gap: 22px; }
     .foot-links a { font-size: 13px; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
@@ -1016,15 +968,7 @@
 <!-- ===== NAVBAR ===== -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <svg width="32" height="32" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="72" height="72" rx="18" fill="url(#nav-lg)"/>
-        <path d="M24 26L34 36L24 46" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="38" y1="46" x2="50" y2="46" stroke="white" stroke-width="3" stroke-linecap="round"/>
-        <defs><linearGradient id="nav-lg" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#1a56db"/><stop offset="1" stop-color="#3b73f0"/></linearGradient></defs>
-      </svg>
-      You<span>code</span>
-    </a>
+    <a href="#hero" class="nav-logo">dev<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#projetos">Projetos</a></li>
@@ -1053,11 +997,6 @@
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
 
-  <!-- Spline 3D Scene -->
-  <div class="hero-spline">
-    <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
-  </div>
-
   <div class="container">
     <div class="hero-content">
 
@@ -1067,12 +1006,12 @@
       </div>
 
       <h1 class="hero-title">
-        Transformando ideias em<br>
-        <span class="grad">Sistemas Escaláveis</span>
+        Desenvolvedor de<br>
+        <span class="grad">Sistemas &amp; IA</span>
       </h1>
 
       <p class="hero-sub">
-        Desenvolvimento de plataformas SaaS, automações inteligentes e soluções com IA que transformam ideias em negócios reais.
+        Crio plataformas SaaS, automações e soluções digitais que transformam ideias em negócios escaláveis.
       </p>
 
       <div class="hero-btns">
@@ -1095,9 +1034,10 @@
   </div>
 
   <div class="hero-scroll">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M7 13l5 5 5-5M7 7l5 5 5-5"/>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
+    scroll
   </div>
 </section>
 
@@ -1201,6 +1141,24 @@
         <div class="proj-name">MEDR</div>
         <div class="proj-desc">Tecnologia que torna a Medicina uma Referência. Gestão integrada de plantões, escalas e equipes médicas com análise em tempo real.</div>
         <a href="https://medr.com.br/" target="_blank" rel="noopener" class="proj-link" onclick="event.stopPropagation()">
+          Ver projeto
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- AtendIA Agenda — mockup: chat + agendamento -->
+      <div class="proj-card reveal d1" onclick="window.open('https://agenda.youcode.ia.br/','_blank')">
+        <div class="proj-preview">
+          <div class="browser-chrome">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">agenda.youcode.ia.br</div>
+          </div>
+          <img src="atend-ia.png" alt="AtendIA Agenda preview" loading="lazy">
+        </div>
+        <span class="tag tag-auto">Automação · WhatsApp</span>
+        <div class="proj-name">AtendIA · Agenda</div>
+        <div class="proj-desc">Agendamento inteligente com atendimento automatizado 24/7 e integração nativa com WhatsApp para negócios e clínicas.</div>
+        <a href="https://agenda.youcode.ia.br/" target="_blank" rel="noopener" class="proj-link" onclick="event.stopPropagation()">
           Ver projeto
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -1447,7 +1405,7 @@
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/mateus-augusto-43403816a/" target="_blank" rel="noopener noreferrer" class="clink">
+        <a href="https://linkedin.com/in/seuperfil" target="_blank" rel="noopener noreferrer" class="clink">
           <div class="clink-icon li">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
@@ -1457,7 +1415,7 @@
           </div>
           <div class="clink-info">
             <span class="clink-name">LinkedIn</span>
-            <span class="clink-sub">linkedin.com/in/mateus-augusto</span>
+            <span class="clink-sub">linkedin.com/in/seuperfil</span>
           </div>
         </a>
       </div>
@@ -1496,19 +1454,8 @@
 <footer>
   <div class="container">
     <div class="foot-inner">
-      <div>
-        <div class="foot-logo">
-          <svg width="26" height="26" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="72" height="72" rx="18" fill="url(#foot-lg)"/>
-            <path d="M24 26L34 36L24 46" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="38" y1="46" x2="50" y2="46" stroke="white" stroke-width="3" stroke-linecap="round"/>
-            <defs><linearGradient id="foot-lg" x1="0" y1="0" x2="72" y2="72"><stop stop-color="#1a56db"/><stop offset="1" stop-color="#3b73f0"/></linearGradient></defs>
-          </svg>
-          You<span>code</span>
-        </div>
-        <div class="foot-tagline">Transformando ideias em sistemas escaláveis</div>
-      </div>
-      <div class="foot-copy">© 2026 · Youcode · Todos os direitos reservados</div>
+      <div class="foot-logo">dev<span>.</span></div>
+      <div class="foot-copy">© 2025 · Desenvolvedor de Sistemas &amp; IA</div>
       <div class="foot-links">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>

@@ -1,0 +1,29 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="500" height="500" fill="#0a0e17"/>
+
+  <!-- Ambient glow -->
+  <circle cx="250" cy="220" r="200" fill="url(#wa-glow)" opacity="0.5"/>
+
+  <!-- Icon mark centered -->
+  <rect x="150" y="110" width="200" height="200" rx="50" fill="url(#wa-grad)"/>
+  <path d="M210 170L250 210L210 250" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="262" y1="250" x2="300" y2="250" stroke="white" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Wordmark below -->
+  <text x="250" y="380" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-1">You<tspan fill="#3b73f0">code</tspan></text>
+
+  <!-- Tagline -->
+  <text x="250" y="415" font-family="'JetBrains Mono', 'Consolas', monospace" font-size="14" fill="rgba(255,255,255,0.3)" text-anchor="middle" letter-spacing="4">SOFTWARE &amp; IA</text>
+
+  <defs>
+    <linearGradient id="wa-grad" x1="150" y1="110" x2="350" y2="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a56db"/>
+      <stop offset="100%" stop-color="#3b73f0"/>
+    </linearGradient>
+    <radialGradient id="wa-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#1a56db" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

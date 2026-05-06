@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youcode · Profile Export</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f4f6f9;
+      font-family: 'Inter', sans-serif;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f1b2d;
+      letter-spacing: -0.5px;
+    }
+    h1 span { color: #1a56db; }
+    .subtitle {
+      font-size: 14px;
+      color: #56657a;
+      margin-top: 4px;
+      text-align: center;
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .profile-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .profile-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #1a56db;
+      background: rgba(26,86,219,0.08);
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .profile-size {
+      font-size: 11px;
+      color: #9baab8;
+    }
+    canvas { border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); cursor: pointer; }
+    canvas:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.15); }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      background: #1a56db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #1242a8; }
+    .preview-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .circle-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #1a56db;
+      box-shadow: 0 4px 20px rgba(26,86,219,0.2);
+    }
+    .circle-wrap img, .circle-wrap canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .circle-label {
+      font-size: 11px;
+      color: #56657a;
+    }
+    .tip {
+      font-size: 12px;
+      color: #9baab8;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.6;
+      margin-top: -16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center;">
+    <h1>You<span>code</span> Profiles</h1>
+    <p class="subtitle">Clique em "Baixar PNG" para salvar cada imagem</p>
+  </div>
+
+  <div class="profiles">
+    <!-- Instagram -->
+    <div class="profile-wrap">
+      <div class="profile-label">INSTAGRAM</div>
+      <canvas id="ig-canvas" width="1080" height="1080"></canvas>
+      <div class="profile-size">1080 x 1080px</div>
+      <button class="download-btn" onclick="download('ig-canvas', 'youcode-profile-instagram.png')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Baixar PNG
+      </button>
+      <div class="preview-circle">
+        <div class="circle-wrap"><canvas id="ig-circle" width="1080" height="1080"></canvas></div>
+        <div class="circle-label">Preview circular</div>
+      </div>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="profile-wrap">
+      <div class="profile-label">WHATSAPP</div>
+      <canvas id="wa-canvas" width="500" height="500"></canvas>
+      <div class="profile-size">500 x 500px</div>
+      <button class="download-btn" onclick="download('wa-canvas', 'youcode-profile-whatsapp.png')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Baixar PNG
+      </button>
+      <div class="preview-circle">
+        <div class="circle-wrap"><canvas id="wa-circle" width="500" height="500"></canvas></div>
+        <div class="circle-label">Preview circular</div>
+      </div>
+    </div>
+
+    <!-- Minimal -->
+    <div class="profile-wrap">
+      <div class="profile-label">MINIMAL / UNIVERSAL</div>
+      <canvas id="min-canvas" width="500" height="500"></canvas>
+      <div class="profile-size">500 x 500px</div>
+      <button class="download-btn" onclick="download('min-canvas', 'youcode-profile-minimal.png')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Baixar PNG
+      </button>
+      <div class="preview-circle">
+        <div class="circle-wrap"><canvas id="min-circle" width="500" height="500"></canvas></div>
+        <div class="circle-label">Preview circular</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="tip">Dica: as imagens sao geradas em alta resolucao direto no navegador. Clique "Baixar PNG" para salvar cada versao.</p>
+
+<script>
+function drawIG(canvas) {
+  const s = canvas.width;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#0a0e17';
+  ctx.fillRect(0, 0, s, s);
+
+  // Ambient glow
+  const glow = ctx.createRadialGradient(s*0.5, s*0.42, 0, s*0.5, s*0.42, s*0.4);
+  glow.addColorStop(0, 'rgba(26,86,219,0.18)');
+  glow.addColorStop(1, 'transparent');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, s, s);
+
+  // Icon box
+  const bx = s*0.315, by = s*0.268, bw = s*0.37, br = s*0.093;
+  const grad = ctx.createLinearGradient(bx, by, bx+bw, by+bw);
+  grad.addColorStop(0, '#1a56db');
+  grad.addColorStop(1, '#3b73f0');
+  roundRect(ctx, bx, by, bw, bw, br, grad);
+
+  // Chevron >
+  const lw = s * 0.017;
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = lw;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  ctx.moveTo(s*0.426, s*0.361);
+  ctx.lineTo(s*0.482, s*0.444);
+  ctx.lineTo(s*0.426, s*0.528);
+  ctx.stroke();
+
+  // Underscore _
+  ctx.beginPath();
+  ctx.moveTo(s*0.508, s*0.528);
+  ctx.lineTo(s*0.574, s*0.528);
+  ctx.stroke();
+
+  // Wordmark
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  ctx.font = `800 ${s*0.089}px "Plus Jakarta Sans", "Segoe UI", sans-serif`;
+  ctx.fillStyle = 'white';
+  const textY = s * 0.74;
+
+  // Measure "You" to position it
+  const youW = ctx.measureText('You').width;
+  const codeW = ctx.measureText('code').width;
+  const totalW = youW + codeW;
+  const startX = s*0.5 - totalW/2;
+
+  ctx.textAlign = 'left';
+  ctx.fillText('You', startX, textY);
+  ctx.fillStyle = '#3b73f0';
+  ctx.fillText('code', startX + youW, textY);
+
+  // Tagline
+  ctx.textAlign = 'center';
+  ctx.font = `500 ${s*0.026}px "JetBrains Mono", "Consolas", monospace`;
+  ctx.fillStyle = 'rgba(255,255,255,0.3)';
+  ctx.letterSpacing = '4px';
+  ctx.fillText('S O F T W A R E   &   I A', s*0.5, s*0.80);
+}
+
+function drawWA(canvas) {
+  const s = canvas.width;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#0a0e17';
+  ctx.fillRect(0, 0, s, s);
+
+  const glow = ctx.createRadialGradient(s*0.5, s*0.42, 0, s*0.5, s*0.42, s*0.4);
+  glow.addColorStop(0, 'rgba(26,86,219,0.22)');
+  glow.addColorStop(1, 'transparent');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, s, s);
+
+  // Icon box
+  const bx = s*0.3, by = s*0.22, bw = s*0.4, br = s*0.1;
+  const grad = ctx.createLinearGradient(bx, by, bx+bw, by+bw);
+  grad.addColorStop(0, '#1a56db');
+  grad.addColorStop(1, '#3b73f0');
+  roundRect(ctx, bx, by, bw, bw, br, grad);
+
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = s*0.02;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  ctx.moveTo(s*0.42, s*0.34);
+  ctx.lineTo(s*0.5, s*0.42);
+  ctx.lineTo(s*0.42, s*0.5);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(s*0.524, s*0.5);
+  ctx.lineTo(s*0.6, s*0.5);
+  ctx.stroke();
+
+  // Wordmark
+  ctx.font = `800 ${s*0.104}px "Plus Jakarta Sans", "Segoe UI", sans-serif`;
+  const textY = s * 0.76;
+  const youW = ctx.measureText('You').width;
+  const codeW = ctx.measureText('code').width;
+  const totalW = youW + codeW;
+  const startX = s*0.5 - totalW/2;
+
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = 'white';
+  ctx.fillText('You', startX, textY);
+  ctx.fillStyle = '#3b73f0';
+  ctx.fillText('code', startX + youW, textY);
+
+  ctx.textAlign = 'center';
+  ctx.font = `500 ${s*0.028}px "JetBrains Mono", "Consolas", monospace`;
+  ctx.fillStyle = 'rgba(255,255,255,0.3)';
+  ctx.fillText('S O F T W A R E   &   I A', s*0.5, s*0.83);
+}
+
+function drawMinimal(canvas) {
+  const s = canvas.width;
+  const ctx = canvas.getContext('2d');
+
+  const grad = ctx.createLinearGradient(0, 0, s, s);
+  grad.addColorStop(0, '#1a56db');
+  grad.addColorStop(1, '#3b73f0');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, s, s);
+
+  // Subtle inner glow
+  const glow = ctx.createRadialGradient(s*0.35, s*0.4, 0, s*0.5, s*0.5, s*0.6);
+  glow.addColorStop(0, 'rgba(255,255,255,0.08)');
+  glow.addColorStop(1, 'transparent');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, s, s);
+
+  // Chevron
+  ctx.strokeStyle = 'white';
+  ctx.lineWidth = s*0.044;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.beginPath();
+  ctx.moveTo(s*0.30, s*0.36);
+  ctx.lineTo(s*0.46, s*0.50);
+  ctx.lineTo(s*0.30, s*0.64);
+  ctx.stroke();
+
+  // Underscore
+  ctx.beginPath();
+  ctx.moveTo(s*0.52, s*0.64);
+  ctx.lineTo(s*0.70, s*0.64);
+  ctx.stroke();
+}
+
+function roundRect(ctx, x, y, w, h, r, fill) {
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.lineTo(x+w-r, y);
+  ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+  ctx.lineTo(x+w, y+h-r);
+  ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+  ctx.lineTo(x+r, y+h);
+  ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+  ctx.lineTo(x, y+r);
+  ctx.quadraticCurveTo(x, y, x+r, y);
+  ctx.closePath();
+  ctx.fillStyle = fill;
+  ctx.fill();
+}
+
+function download(canvasId, filename) {
+  const canvas = document.getElementById(canvasId);
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+// Wait for fonts to load
+document.fonts.ready.then(() => {
+  // Draw main canvases
+  const igCanvas = document.getElementById('ig-canvas');
+  igCanvas.style.width = '300px';
+  igCanvas.style.height = '300px';
+  drawIG(igCanvas);
+
+  const waCanvas = document.getElementById('wa-canvas');
+  waCanvas.style.width = '300px';
+  waCanvas.style.height = '300px';
+  drawWA(waCanvas);
+
+  const minCanvas = document.getElementById('min-canvas');
+  minCanvas.style.width = '300px';
+  minCanvas.style.height = '300px';
+  drawMinimal(minCanvas);
+
+  // Draw circle previews
+  const igCircle = document.getElementById('ig-circle');
+  drawIG(igCircle);
+  const waCircle = document.getElementById('wa-circle');
+  drawWA(waCircle);
+  const minCircle = document.getElementById('min-circle');
+  drawMinimal(minCircle);
+});
+</script>
+</body>
+</html>

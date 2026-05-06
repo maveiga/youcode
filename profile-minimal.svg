@@ -1,0 +1,15 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clean gradient background -->
+  <rect width="500" height="500" fill="url(#min-bg)"/>
+
+  <!-- Icon mark only - centered, large -->
+  <path d="M170 190L250 280L170 370" stroke="white" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="272" y1="370" x2="340" y2="370" stroke="white" stroke-width="22" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="min-bg" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a56db"/>
+      <stop offset="100%" stop-color="#3b73f0"/>
+    </linearGradient>
+  </defs>
+</svg>
