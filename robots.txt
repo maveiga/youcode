@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youcode.ia.br/sitemap.xml
